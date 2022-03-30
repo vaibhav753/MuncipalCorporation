@@ -1,0 +1,39 @@
+.zoom:hover{
+    transform:scale(1.1);
+   
+}
+
+div.b10{
+    background-repeat: no-repeat;
+    background-size: 100% 80%;
+    /* background-position: center; */
+    /* margin: 3; */
+    height: 90vh;
+    animation: changeImage 20s linear infinite;
+}
+
+@keyframes changeImage{
+    0% {
+        background-image: url('../Images/Muncipal.jpg');
+    }
+
+    25% {
+        background-image: url('../Images/v1.jpg');
+    }
+
+    50% {
+        background-image: url('../Images/v2.jpg');
+    }
+
+    75% {
+        background-image: url('../Images/v3.jpg');
+    }
+
+    100% {
+        background-image: url('../Images/v4.jpg');
+    }
+} 
+.cent{
+    border-collapse: collapse;
+    margin: 100px 100px 240px 100px;
+}

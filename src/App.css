@@ -1,0 +1,113 @@
+ .App {
+  text-align: center;
+  align-content: center;
+}
+
+.App {
+  text-align: left;
+}
+form {
+/* border:2px solid green;*/
+ padding: 20px;
+}
+.img1{ 
+ border-radius: 50%;
+}
+.App-header {
+ background-color: white;
+ min-height: 90vh;
+ display: flex;
+ flex-direction: column;
+ align-items: center;
+ justify-content: center;
+ font-size: calc(10px + 2vmin);
+ color: black;
+}
+.card-container {
+  background-color: rgb(135, 176, 202);
+  padding: 90px;
+  position: relative;
+  box-shadow: 0 0 5px rgba(75, 75, 75, 0.07);
+  z-index: 1;
+}
+.btn_item{
+  position: absolute;
+  margin-left: auto;
+  margin-right: auto;
+}
+.card-title {
+  text-align: center;
+  font-family: "Cormorant Garamond", serif;
+  font-size: 30px;
+  font-weight: 200;
+  line-height: 50px;
+  margin: 9px 2px;
+  text-transform: capitalize;
+}
+.wraper{
+  text-align: center;
+}
+/* h3{
+  color: white;
+} */
+label{
+  font-weight: bold;
+  font-size: 10rem;
+}
+.mainDiv{
+  height: 100vh;
+}
+p.slide-left {
+  width:100%;
+  overflow:hidden;
+}
+p.slide-left{
+  animation: slide-left 10s;
+}
+
+@keyframes slide-left {
+  from {
+    margin-left: 100%;
+    width: 100%; 
+  }
+
+  to {
+    margin-left: 0%;
+    width: 100%;
+  }
+}
+.zoom:hover{
+  transform:scale(1.1);
+ 
+}
+div.b10{
+  background-image: url('./Images/2.jpg');
+  background-repeat: no-repeat;
+  background-size: 70% 100%;
+  /* background-position: center; */
+  margin: 0;
+  height: 10vh;
+  animation: changeImage 15s linear infinite;
+}
+
+@keyframes changeImage{
+  0% {
+      background-image: url('./Images/1.jpg');
+  }
+
+  25% {
+      background-image: url('./Images/2.jpg');
+  }
+
+  50% {
+      background-image: url('./Images/3.jpg');
+  }
+
+  75% {
+      background-image: url('./Images/4.jpg');
+  }
+
+  100% {
+      background-image: url('./Images/5.jpg');
+  }
+} 

@@ -1,0 +1,24 @@
+.header1{
+    background-color:hsl(221, 100%, 54%);
+    color: white;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    padding-left: 15px;
+  
+}
+
+.needs-validation{
+    padding-left: 50px;
+    padding-right: 50px;
+}
+
+.textStyleHeading{
+    text-align: center;
+    font-family: Verdana;
+    font-weight: bold;
+}
+.textStyle{
+    text-align: center;
+    font-family: Verdana;
+    
+}
