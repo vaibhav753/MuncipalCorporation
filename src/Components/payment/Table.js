@@ -174,6 +174,12 @@ function FilterTableComponent() {
             "unit": "110",
             "amount": 510,
             "status": "not paid"
+        },
+        {
+            "month": "april",
+            "unit": "75",
+            "amount": 260,
+            "status": "paid"
         }
     ]
 

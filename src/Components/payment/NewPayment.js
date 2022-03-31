@@ -12,7 +12,7 @@ const NewPayment = () => {
         <div>
         <div className="row justify-content-center box-height my-4">
 
-            <div className="col-9 align-self-center shadow-lg" >
+            <div className="col-9 align-self-center shadow-lg" style={{ backgroundColor: '#ebf2fa' }} >
                 <div className="row justify-content-center p-2">
                     < h2 style={{ textAlign: "center", fontFamily: 'Vedana', fontWeight: 'bold' }}>Make payment </h2>
                 </div>

@@ -5,7 +5,7 @@ const Complaint = () => {
         <div>
             <div className="row justify-content-center box-height">
 
-                <div className="col-9 align-self-center shadow-lg" >
+                <div className="col-9 align-self-center shadow-lg" style={{ backgroundColor: '#ebf2fa' }} >
                     <div className="row justify-content-center p-2">
                         < h2 className="textStyleHeading">Complaint Registration</h2>
                     </div>
