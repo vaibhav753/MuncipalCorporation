@@ -14,17 +14,17 @@ const HODOnlineServices = () => {
 
     const UnverifiedForm = (e) => {
         e.preventDefault();
-        navigate('/complaintslist');
+        navigate('/uvlist');
     }
 
 
     const VerifiedForms = (e) => {
         e.preventDefault();
-        navigate('/complaintsrejectedlist');
+        navigate('/vlist');
     }
     const rejectedForms = (e) => {
         e.preventDefault();
-        navigate('/complaintscompletedlist');
+        navigate('/rejectedlist');
     }
     return (
         <body>

@@ -126,25 +126,25 @@ function Table({ columns, data }) {
 
 
 
-function ComplaintsCompletedList() {
+function RejectedList() {
     const columns = React.useMemo(
         () => [
             
             {
-                Header: 'Complaints History Table',
+                Header: 'Rejected Forms History Table',
                 columns: [
                     {
                         Header: 'Id',
                         accessor: 'Id'
                     },
                     {
-                        Header: 'Type',
-                        accessor: 'type'
+                        Header: 'Date',
+                        accessor: 'dob'
                     },
                    
                     {
-                        Header: 'Sub-Type',
-                        accessor: 'subtype'
+                        Header: 'Type of Form',
+                        accessor: 'type'
                     },
                     {
                         Header: 'Action',
@@ -158,28 +158,28 @@ function ComplaintsCompletedList() {
 
     const data = [
         {
-            "Id": "105",
-            "type": "Pest Control ",
-            "subtype": "Pest Control ",
-            "action": "Resolved"
+            "Id": "101",
+            "dob": "1998-01-01",
+            "type": "Birth",
+            "action": "View Details"
         },
         {
-            "Id": "106",
-            "type": "Pest Control ",
-            "subtype": "Pest Control ",
-            "action": "Resolved"
+            "Id": "102",
+            "dob": "1997-01-01",
+            "type": "Death",
+            "action": "View Details"
         },
         {
-            "Id": "107",
-            "type": "Pest Control ",
-            "subtype": "Pest Control ",
-            "action": "Resolved"
+            "Id": "103",
+            "dob": "1996-01-01",
+            "type": "Marriage",
+            "action": "View Details"
         },
         {
-            "Id": "108",
-            "type": "Pest Control ",
-            "subtype": "Pest Control ",
-            "action": "Resolved"
+            "Id": "104",
+            "dob": "1995-01-01",
+            "type": "Marriage",
+            "action": "View Details"
         }
     ]
 
@@ -188,6 +188,4 @@ function ComplaintsCompletedList() {
     )
 }
 
-export default ComplaintsCompletedList;
-
-
+export default RejectedList;

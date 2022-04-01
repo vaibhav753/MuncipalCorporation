@@ -23,6 +23,9 @@ import ComplaintsCompletedList from './Components/complaints/ComplaintsCompleted
 import ComplaintsRejectedList from './Components/complaints/ComplaintsRejectedList';
 import HODOnlineServices from './Components/hod/HODOnlineServices';
 import Table from './Components/payment/Table';
+import UVList from './Components/onlineServices/UVList';
+import VList from './Components/onlineServices/VList';
+import RejectedList from './Components/onlineServices/RejectedList';
 function App() {
 
   return (
@@ -53,6 +56,10 @@ function App() {
           <Route path='/complaintsrejectedlist' element={<ComplaintsRejectedList />}></Route>
           <Route path='/HODOnlineServices' element={<HODOnlineServices/>}></Route>
           <Route path='/table' element={<Table/>}></Route>
+          <Route path='/uvlist' element={<UVList/>}></Route>
+          <Route path='/vlist' element={<VList/>}></Route>
+          <Route path='/rejectedlist' element={<RejectedList/>}></Route>
+          
 
         </Routes>
         

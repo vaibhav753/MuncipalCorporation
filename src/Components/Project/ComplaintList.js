@@ -6,7 +6,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 
 
 // Define a default UI for filtering
-function GlobalFilter({
+function ComplaintList({
     preGlobalFilteredRows,
     globalFilter,
     setGlobalFilter,
@@ -126,29 +126,29 @@ function Table({ columns, data }) {
 
 
 
-function ComplaintsCompletedList() {
+function FilterTableComponent() {
     const columns = React.useMemo(
         () => [
             
             {
-                Header: 'Complaints History Table',
+                Header: 'Payment History Table',
                 columns: [
                     {
-                        Header: 'Id',
-                        accessor: 'Id'
+                        Header: 'Month',
+                        accessor: 'month'
                     },
                     {
-                        Header: 'Type',
-                        accessor: 'type'
+                        Header: 'Unit',
+                        accessor: 'unit'
                     },
                    
                     {
-                        Header: 'Sub-Type',
-                        accessor: 'subtype'
+                        Header: 'Amount',
+                        accessor: 'amount'
                     },
                     {
-                        Header: 'Action',
-                        accessor: 'action'
+                        Header: 'Status',
+                        accessor: 'status'
                     },
                 ],
             },
@@ -158,28 +158,28 @@ function ComplaintsCompletedList() {
 
     const data = [
         {
-            "Id": "105",
-            "type": "Pest Control ",
-            "subtype": "Pest Control ",
-            "action": "Resolved"
+            "month": "january",
+            "unit": "98",
+            "amount": 350,
+            "status": "paid"
         },
         {
-            "Id": "106",
-            "type": "Pest Control ",
-            "subtype": "Pest Control ",
-            "action": "Resolved"
+            "month": "february",
+            "unit": "88",
+            "amount": 310,
+            "status": "paid"
         },
         {
-            "Id": "107",
-            "type": "Pest Control ",
-            "subtype": "Pest Control ",
-            "action": "Resolved"
+            "month": "march",
+            "unit": "110",
+            "amount": 510,
+            "status": "not paid"
         },
         {
-            "Id": "108",
-            "type": "Pest Control ",
-            "subtype": "Pest Control ",
-            "action": "Resolved"
+            "month": "april",
+            "unit": "75",
+            "amount": 260,
+            "status": "paid"
         }
     ]
 
@@ -188,6 +188,4 @@ function ComplaintsCompletedList() {
     )
 }
 
-export default ComplaintsCompletedList;
-
-
+export default ComplaintList;
