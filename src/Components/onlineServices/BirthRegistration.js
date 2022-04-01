@@ -39,18 +39,12 @@ function BirthRegistration() {
         setAddress(e.target.value);
     }
     const handleSubmit = (e) => {
-
         alert('A form was submitted with Name :"' + childName);
-
         e.preventDefault();
-
     }
-
-
     return (
         <div>
             <div className="row justify-content-center box-height">
-
                 <div className="col-9 align-self-center shadow-lg" style={{ backgroundColor: '#ebf2fa' }}>
                     <div className="row justify-content-center p-2">
                         < h2 className="textStyleHeading">Birth Registration Form</h2>
@@ -61,7 +55,6 @@ function BirthRegistration() {
                                 <h3 className='p-2 rounded textStyle' id="heading">Child Details
                                 </h3>
                             </div>
-
                             <div>
                                 <div className="mb-3 row justify-content-center">
                                     <label className="col-sm-3 col-form-label" >

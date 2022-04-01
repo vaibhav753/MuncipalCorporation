@@ -1,11 +1,31 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import ReactDOM from 'react-dom';
 import '../../App.css';
 import "../Addcss/Complaint.css";
-
-
+import ImageUploading from 'react-images-uploading';
 
 function MarriageRegistration() {
+
+    const [images, setImages] = React.useState([]);
+    const maxNumber = 69;
+
+    const onChange = (imageList, addUpdateIndex) => {
+        // data for submit
+        console.log(imageList, addUpdateIndex);
+        setImages(imageList);
+    };
+
+    /*  const [image1, setImage1] = React.useState([]);
+     const [image2, setImage2] = React.useState([]);
+     const[image1URLs,setImage1URLs]=React.useState([]);
+ 
+     useEffect((e)=>{
+         if (image1.length < 1) return;
+         const newImageUrls=[];
+         setImage1(URL.createObjectURL(e))
+         setImage1URLs(newImageUrls);
+     }) */
+
     const [hName, setHName] = useState('');
     const [hReligion, setHReligion] = useState('');
     const [hDob, setHDob] = useState('');
@@ -99,15 +119,19 @@ function MarriageRegistration() {
     const handleW2IdNoChange = (e) => {
         setW1IdNo(e.target.value)
     }
+    /* const handleImage1Change = (e) => {
+        setImage1(e.target.files[0]);
+        //setImage1([...e.target.files]);
+    }
+    const handleImage2Change = (e) => {
+        setImage2([...e.target.files]);
+    }
+ */
     const handleSubmit = (e) => {
         e.preventDefault();
         alert('A form was submitted with Name :"' + hName + " " + wName);
         console.log(hName + " " + wName);
-
-
     }
-
-
     return (
         <div>
             <div className="row justify-content-center box-height" >
@@ -116,91 +140,143 @@ function MarriageRegistration() {
                     <div className="row justify-content-center p-2 "><h2 className='textStyleHeading'>Marriage Registration Form</h2></div>
                     <form className="form-inline" onSubmit={(e) => { handleSubmit(e) }}>
 
-                        <div className="border border-2 p-1" /* style={{backgroundColor:'teal'}} */>
-                            <div className='row justify-content-center '> <h3 /* className='p-2 rounded'style={{ textAlign:"center",backgroundColor:"#3d5a80",width:"250px" }} */ style={{ fontFamily: 'Verdana', textAlign: "center" }}>Husband Details</h3></div>
-                            <div className="mb-3 row justify-content-center">
-                                <label className="col-sm-3 col-form-label">Name of husband</label>
-                                <div className="col-sm-8">
-                                    <input type="text" className="form-control" value={hName} required onChange={(e) => { handleHNameChange(e) }} />
-                                </div>
-                            </div>
-
-
-                            <div className="mb-3 row mx-4 ">
-                                <label className="col-sm-3 col-form-label">Religion</label>
-                                <div className="col-sm-4 mx-4">
-                                    <input type="text" className="form-control" name="hReligion" value={hReligion} required onChange={(e) => handleHReligionChange(e)} />
-                                </div>
-                            </div>
-
-
-                            <div className="mb-3 row mx-4">
-                                <label className="col-sm-3 col-form-label">Date of Birth</label>
-                                <div className="col-sm-4 mx-4">
-
-                                    <input className="form-control" type="date" value={hDob} name="hDob" required onChange={(e) => { handleHDobChange(e) }} />
-                                </div>
-                            </div>
-
-
-
-                            <div className="mb-3 row mx-4">
-                                <label className="col-sm-3 col-form-label">Marital status</label>
-                                <div className="col-sm-4 mx-4">
-                                    <select className="form-control" name="mStatus" required onChange={(e) => { handleHMStatusChange(e) }}>
-                                        <option value="select marital status" disabled selected>Select Marital Status</option>
-                                        <option value="bachelor">Bachelor</option>
-                                        <option value="widow">Widow</option>
-                                        <option value="divorcee">Divorcee</option>
-
-                                    </select>
-                                </div>
-                            </div>
-
-
-
-                            <div className="mb-3 row justify-content-center">
-                                <label className="col-sm-3 col-form-label">Address </label>
-                                <div className="col-sm-8">
-                                    {/* <input className="form-control" type="text" value={adderss} required onChange={(e) => { handleAddressChange(e) }} /> */}
-                                    <textarea className="form-control" type="text" value={hAdderss} required onChange={(e) => { handleHAddressChange(e) }} />
-                                </div>
-                            </div>
-
-
-                            <div className="mb-3 row mx-4">
-                                <label className="col-sm-3 col-form-label">Id Proof</label>
-                                <div className="col-sm-4 mx-4">
-                                    <select className="form-control" name="hIdProof" required onChange={(e) => { handleHIdProofChange(e) }}>
-                                        <option value="select id proof" disabled selected>Select Id Proof</option>
-                                        <option value="aadhar_Card">Aadhar Card</option>
-                                        <option value="pan_card">Pan Card</option>
-                                        <option value="passport">PassPort</option>
-
-                                    </select>
-                                </div>
-                            </div>
-
-                            <div className="mb-3 row mx-4">
-                                <label className="col-sm-3 col-form-label">Id Number</label>
-                                <div className="col-sm-4 mx-4">
-                                    <input type="text" className="form-control" value={hIdNo} name="hIdNO" required onChange={(e) => { handleHIdNoChange(e) }} />
-                                </div>
-                            </div>
-
-                        </div>
-
-                        <br></br>
                         <div className="border border-2 p-1" >
-                            <div className='row justify-content-center '> <h3 className='p-2 rounded' id="heading">Wife Details</h3></div>
-                            <div className="mb-3 row justify-content-center">
+                            <div class="row">
+                                <div className='row justify-content-center '>
+                                     <h3 style={{ fontFamily: 'Verdana', textAlign: "center" }}>Husband Details</h3></div>
+                                <div class="col-8">
+                                    <div className="mb-3 row justify-content-center">
+                                        <label className="col-sm-3 col-form-label">Name of husband</label>
+                                        <div className="col-sm-8">
+                                            <input type="text" className="form-control" value={hName} required onChange={(e) => { handleHNameChange(e) }} />
+                                        </div>
+                                    </div>
+
+
+                                    <div className="mb-3 row mx-4 ">
+                                        <label className="col-sm-3 col-form-label">Religion</label>
+                                        <div className="col-sm-4 mx-4">
+                                            <input type="text" className="form-control" name="hReligion" value={hReligion} required onChange={(e) => handleHReligionChange(e)} />
+                                        </div>
+                                    </div>
+
+
+                                    <div className="mb-3 row mx-4">
+                                        <label className="col-sm-3 col-form-label">Date of Birth</label>
+                                        <div className="col-sm-4 mx-4">
+
+                                            <input className="form-control" type="date" value={hDob} name="hDob" required onChange={(e) => { handleHDobChange(e) }} />
+                                        </div>
+                                    </div>
+
+
+
+                                    <div className="mb-3 row mx-4">
+                                        <label className="col-sm-3 col-form-label">Marital status</label>
+                                        <div className="col-sm-4 mx-4">
+                                            <select className="form-control" name="mStatus" required onChange={(e) => { handleHMStatusChange(e) }}>
+                                                <option value="select marital status" disabled selected>Select Marital Status</option>
+                                                <option value="bachelor">Bachelor</option>
+                                                <option value="widow">Widow</option>
+                                                <option value="divorcee">Divorcee</option>
+
+                                            </select>
+                                        </div>
+                                    </div>
+
+
+
+                                    <div className="mb-3 row justify-content-center">
+                                        <label className="col-sm-3 col-form-label">Address </label>
+                                        <div className="col-sm-8">
+                                            {/* <input className="form-control" type="text" value={adderss} required onChange={(e) => { handleAddressChange(e) }} /> */}
+                                            <textarea className="form-control" type="text" value={hAdderss} required onChange={(e) => { handleHAddressChange(e) }} />
+                                        </div>
+                                    </div>
+
+
+                                    <div className="mb-3 row mx-4">
+                                        <label className="col-sm-3 col-form-label">Id Proof</label>
+                                        <div className="col-sm-4 mx-4">
+                                            <select className="form-control" name="hIdProof" required onChange={(e) => { handleHIdProofChange(e) }}>
+                                                <option value="select id proof" disabled selected>Select Id Proof</option>
+                                                <option value="aadhar_Card">Aadhar Card</option>
+                                                <option value="pan_card">Pan Card</option>
+                                                <option value="passport">PassPort</option>
+
+                                            </select>
+                                        </div>
+                                    </div>
+
+
+                                    <div className="mb-3 row mx-4">
+                                        <label className="col-sm-3 col-form-label">Id Number</label>
+                                        <div className="col-sm-4 mx-4">
+                                            <input type="text" className="form-control" value={hIdNo} name="hIdNO" required onChange={(e) => { handleHIdNoChange(e) }} />
+                                        </div>
+                                    </div>
+
+                                </div>
+                                <div class="col-4">
+                                    <label className="col-sm-1 col-form-label">Upload Photo</label>
+                                    <div className="App" >
+                                        <ImageUploading
+                                            multiple
+                                            value={images}
+                                            onChange={onChange}
+                                            maxNumber={maxNumber}
+                                            dataURLKey="data_url"
+                                        >
+                                            {({
+                                                imageList,
+                                                onImageUpload,
+                                                onImageRemoveAll,
+                                                onImageUpdate,
+                                                onImageRemove,
+                                                isDragging,
+                                                dragProps,
+                                            }) => (
+                                                // write your building UI
+                                                <div className="upload__image-wrapper">
+                                                    <button
+                                                        style={isDragging ? { color: 'red' } : undefined}
+                                                        onClick={onImageUpload}
+                                                        {...dragProps}
+                                                    >
+                                                        Click or Drop here
+                                                    </button>
+                                                    &nbsp;
+                                                    <button onClick={onImageRemoveAll}>Remove all images</button>
+                                                    {imageList.map((image, index) => (
+                                                        <div key={index} className="image-item">
+                                                            <img src={image['data_url']} alt="" width="100" />
+                                                            <div className="image-item__btn-wrapper">
+                                                                <button onClick={() => onImageUpdate(index)}>Update</button>
+                                                                <button onClick={() => onImageRemove(index)}>Remove</button>
+                                                            </div>
+                                                        </div>
+                                                    ))}
+                                                </div>
+                                            )}
+                                        </ImageUploading>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <br></br>
+
+                        <div className="border border-2 p-1" >
+                        <div class="row">
+                            <div className='row justify-content-center '> 
+                            <h3 className='p-2 rounded' id="heading">Wife Details</h3></div>
+                            
+                                <div class="col-8">
+                                <div className="mb-3 row justify-content-center">
                                 <label className="col-sm-3 col-form-label">Name of Wife</label>
                                 <div className="col-sm-8">
                                     <input type="text" className="form-control" value={wName} required onChange={(e) => { handleWNameChange(e) }} />
                                 </div>
                             </div>
-
-
 
                             <div className="mb-3 row mx-4 ">
                                 <label className="col-sm-3 col-form-label">Religion</label>
@@ -209,16 +285,12 @@ function MarriageRegistration() {
                                 </div>
                             </div>
 
-
-
                             <div className="mb-3 row mx-4">
                                 <label className="col-sm-3 col-form-label">Date of Birth</label>
                                 <div className="col-sm-4 mx-4">
-
                                     <input className="form-control" type="date" value={wDob} name="wDob" required onChange={(e) => { handleHDobChange(e) }} />
                                 </div>
                             </div>
-
 
                             <div className="mb-3 row mx-4">
                                 <label className="col-sm-3 col-form-label">Marital status</label>
@@ -228,13 +300,9 @@ function MarriageRegistration() {
                                         <option value="bachelor">Bachelor</option>
                                         <option value="widow">Widow</option>
                                         <option value="divorcee">Divorcee</option>
-
                                     </select>
                                 </div>
                             </div>
-
-
-
 
                             <div className="mb-3 row justify-content-center">
                                 <label className="col-sm-3 col-form-label">Address </label>
@@ -244,8 +312,6 @@ function MarriageRegistration() {
                                 </div>
                             </div>
 
-
-
                             <div className="mb-3 row mx-4">
                                 <label className="col-sm-3 col-form-label">Id Proof</label>
                                 <div className="col-sm-4 mx-4">
@@ -254,16 +320,69 @@ function MarriageRegistration() {
                                         <option value="aadhar_Card">Aadhar Card</option>
                                         <option value="pan_card">Pan Card</option>
                                         <option value="passport">PassPort</option>
-
                                     </select>
                                 </div>
                             </div>
-
 
                             <div className="mb-3 row mx-4">
                                 <label className="col-sm-3 col-form-label">Id Number</label>
                                 <div className="col-sm-4 mx-4">
                                     <input type="text" className="form-control" value={wIdNo} name="hIdNO" required onChange={(e) => { handleHIdNoChange(e) }} />
+                                </div>
+                            </div>
+                                </div>
+
+                                <div classname="col-4">
+                                <label className="col-sm-1 col-form-label">Upload Photo</label>
+                                    <div className="App" >
+                                        <ImageUploading
+                                            multiple
+                                            value={images}
+                                            onChange={onChange}
+                                            maxNumber={maxNumber}
+                                            dataURLKey="data_url"
+                                        >
+                                            {({
+                                                imageList,
+                                                onImageUpload,
+                                                onImageRemoveAll,
+                                                onImageUpdate,
+                                                onImageRemove,
+                                                isDragging,
+                                                dragProps,
+                                            }) => (
+                                                // write your building UI
+                                                <div className="upload__image-wrapper">
+                                                    <button
+                                                        style={isDragging ? { color: 'red' } : undefined}
+                                                        onClick={onImageUpload}
+                                                        {...dragProps}
+                                                    >
+                                                        Click or Drop here
+                                                    </button>
+                                                    &nbsp;
+                                                    <button onClick={onImageRemoveAll}>Remove all images</button>
+                                                    {imageList.map((image, index) => (
+                                                        <div key={index} className="image-item">
+                                                            <img src={image['data_url']} alt="" width="100" />
+                                                            <div className="image-item__btn-wrapper">
+                                                                <button onClick={() => onImageUpdate(index)}>Update</button>
+                                                                <button onClick={() => onImageRemove(index)}>Remove</button>
+                                                            </div>
+                                                        </div>
+                                                    ))}
+                                                </div>
+                                            )}
+                                        </ImageUploading>
+                                    </div>
+
+                                </div>
+                            </div>
+                            
+                            <div className="mb-3 row mx-4">
+                                <label className="col-sm-3 col-form-label">Photo</label>
+                                <div className="col-sm-4 mx-4">
+                                    {/*  <input type="file" multiple accept="image/*" className="form-control" value={image2} name="image2" required onChange={(e) => { handleImage2Change(e) }} /> */}
                                 </div>
                             </div>
 
