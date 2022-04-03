@@ -1,18 +1,9 @@
-.zoom:hover{
-    transform:scale(1.1);
-   
+.container {
+    justify-content: space-evenly;
 }
 
-div.b10{
-    background-repeat: no-repeat;
-    background-size: 100% 80%;
-    /* background-position: center; */
-    /* margin: 3; */
-    height: 90vh;
-    animation: changeImage 20s linear infinite;
-}
 
-@keyframes changeImage{
+@keyframes changeImage {
     0% {
         background-image: url('../Images/Muncipal.jpg');
     }
@@ -32,8 +23,4 @@ div.b10{
     100% {
         background-image: url('../Images/v4.jpg');
     }
-} 
-.cent{
-    border-collapse: collapse;
-    margin: 100px 100px 240px 100px;
 }

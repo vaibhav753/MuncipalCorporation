@@ -1,11 +1,8 @@
-// import 'bootstrap/dist/css/bootstrap.min.css';
-// import '../Addcss/Card.css'
-import '../Addcss/Background.css';
-import NavigationBar from './NavigationBar';
+
 import { useNavigate } from 'react-router-dom';
 import { useState } from 'react';
-import HomePage from '../HomePage';
-import '../Addcss/formHeading.css'
+import '../Addcss/formHeading.css';
+import './Login.css';
 
 const Login = () => {
     const [name, setName] = useState("");
@@ -40,7 +37,8 @@ const Login = () => {
     }
     return (
         <div className="row justify-content-center box-height my-4">
-            <div className="col-6" style={{ backgroundColor: '#ebf2fa' }}>
+
+            <div className="col-6 loginPage" >
                 <div className="row justify-content-center p-2 ">
 
                     <div className="align-self-center shadow-lg ">
@@ -81,7 +79,7 @@ const Login = () => {
                 </div>
             </div>
 
-        </div>
+        </div >
     );
 }
 

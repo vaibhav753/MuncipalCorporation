@@ -1,36 +1,37 @@
-import image from '../Images/Muncipal.jpg';
-import certificate from '../Images/Muncipal.jpg';
-import { BiWallet, BiPencil, BiMenu, BiHourglass, BiCheck, BiTrash, BiX } from "react-icons/bi";
-import { AiFillFileText } from 'react-icons/ai';
+
+import { BiHourglass, BiCheck, BiX } from "react-icons/bi";
+
 import { useNavigate } from 'react-router-dom';
-import Onlineservices from '../onlineServices/OnlineServices';
-import BirthRegistration from '../onlineServices/BirthRegistration'
 
-
+import "../Addcss/HodReactTable.css";
+import "./HodOnlineSer.css";
 import "../Addcss/HomePage.css";
+
 
 const HODOnlineServices = () => {
     const navigate = useNavigate();
 
     const UnverifiedForm = (e) => {
         e.preventDefault();
-        navigate('/complaintslist');
+        navigate('/uvlist');
     }
 
 
     const VerifiedForms = (e) => {
         e.preventDefault();
-        navigate('/complaintsrejectedlist');
+        navigate('/vlist');
     }
     const rejectedForms = (e) => {
         e.preventDefault();
-        navigate('/complaintscompletedlist');
+        navigate('/rejectedlist');
     }
+
+
     return (
         <body>
-            <div className='container-fluid'>
+            <div className='container-fluid mb-5'>
                 <section className="p-4 my-8">
-                    <div className="container">
+                    <div className="container hodOnline">
                         <div className="row text-center g-4 my-4">
 
                             <div className="col-md">
@@ -81,7 +82,7 @@ const HODOnlineServices = () => {
                                         <button onClick={(e) => rejectedForms(e)} className="btn btn-primary" style={{ backgroundColor: 'silver', color: 'black', fontWeight: 'bold' }}>Click here</button>
                                     </div>
                                 </div>
-                                <span></span><span></span>
+
 
 
                             </div>
