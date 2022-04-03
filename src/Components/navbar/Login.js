@@ -52,7 +52,7 @@ const Login = () => {
                                 <div className="mb-3 row justify-content-center">
                                     <label className="col-sm-3 col-form-label">Enter Email : </label>
                                     <div className="col-sm-8">
-                                        <input className='form-control' type="text" id="n1" value={name} name="name" required onChange={(e) => { handleNameChange(e) }}></input>
+                                        <input className='form-control' type="email" id="n1" value={name} name="name" placeholder="name@example.com" required onChange={(e) => { handleNameChange(e) }}></input>
                                     </div>
                                 </div>
 
