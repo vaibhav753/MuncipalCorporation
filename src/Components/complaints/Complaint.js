@@ -121,7 +121,7 @@ const Complaint = () => {
                                 <div className="mb-3 row mx-4">
                                     <label className="col-sm-3 col-form-label">Contact Number </label>
                                     <div className="col-sm-4 mx-4">
-                                        <input className="form-control" type="number" required placeholder="Contact number" onChange={(e) => { handleContactNumChange(e) }} />
+                                        <input minLength="10" maxLength="10" className="form-control" type="tel" required placeholder="Contact number" onChange={(e) => { handleContactNumChange(e) }} />
     
                                     </div>
                                 </div>
