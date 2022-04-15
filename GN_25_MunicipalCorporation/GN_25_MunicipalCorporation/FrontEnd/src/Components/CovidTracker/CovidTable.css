@@ -1,0 +1,19 @@
+.covidTable {
+    margin-top: 20px;
+    overflow: scroll;
+    height: 500px;
+}
+
+.covidTable tr {
+    display: flex;
+    justify-content: space-between;
+}
+
+.covidTable td {
+    padding: 0.5rem;
+}
+
+.covidTable tr:nth-of-type(odd) {
+    background-color: #f3f2f8;
+
+}

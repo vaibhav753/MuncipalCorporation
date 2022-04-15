@@ -1,0 +1,13 @@
+.bmcMap {
+    height: 300px;
+    background-color: white;
+    padding: 0.5rem;
+    border-radius: 20px;
+    margin-top: 16px;
+    box-shadow: 0 0 8px -4px rgba(0, 0, 0, 0.5);
+}
+
+.bmcMap .leaflet-container {
+    height: 100%;
+    border-radius: 12px;
+}

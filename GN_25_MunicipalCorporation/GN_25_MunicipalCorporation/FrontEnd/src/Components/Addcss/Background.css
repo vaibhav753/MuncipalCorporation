@@ -1,0 +1,25 @@
+body.bck{
+
+     background: url("../Images/loginBgImg.jpg"); 
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+div.bck2{
+     /* background-image:url("../Images/loginBgImg.jpg");  */
+ 
+   
+    background-repeat: no-repeat;
+    background-size: cover;
+    /* background-position: center; */
+    margin: 0;
+    height: 100vh;
+}
+
+
+
+
+
+
+
+

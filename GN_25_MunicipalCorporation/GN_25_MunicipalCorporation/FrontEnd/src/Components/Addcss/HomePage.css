@@ -1,0 +1,26 @@
+.container {
+    justify-content: space-evenly;
+}
+
+
+@keyframes changeImage {
+    0% {
+        background-image: url('../Images/Muncipal.jpg');
+    }
+
+    25% {
+        background-image: url('../Images/v1.jpg');
+    }
+
+    50% {
+        background-image: url('../Images/v2.jpg');
+    }
+
+    75% {
+        background-image: url('../Images/v3.jpg');
+    }
+
+    100% {
+        background-image: url('../Images/v4.jpg');
+    }
+}

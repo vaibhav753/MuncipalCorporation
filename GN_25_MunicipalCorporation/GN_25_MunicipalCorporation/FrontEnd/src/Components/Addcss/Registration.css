@@ -1,0 +1,9 @@
+.backGroundImg{
+    /* background-image: url('../Images/Muncipal.jpg'); */
+   
+    background-repeat: no-repeat;
+    background-size: cover;
+    /* background-position: center; */
+    margin: 0;
+    height: 100vh
+}
